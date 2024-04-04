@@ -1,0 +1,6 @@
+Profesor solo para comunicarle que por un error mio 
+mi git bash no estaba con mi correro y aun asi estaba haciendo cambios
+en el repositorio de nuestro grupo. Comentarle que ya lo arregle y si va 
+a la parte de insights se dara cuenta que el usuario llamado "lautaro"
+que ha hecho commits soy yo que es el mismo que tiene como "lautaroballesteros0926"
+que es mi cuenta de github, esto para que pueda revisar mis actividades, gracias.
