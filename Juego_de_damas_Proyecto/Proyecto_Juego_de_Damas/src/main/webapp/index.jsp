@@ -40,6 +40,8 @@
     </head>
     <body>
         <h1>Registrate para Jugar</h1>
+        <% String hola = "aqui"; %>
+        <%= hola %>
         <form action="SvUsuario" method="POST">
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" required>
