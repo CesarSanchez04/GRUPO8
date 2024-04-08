@@ -1,0 +1,11 @@
+logica\Tablero.class
+logica\Usuario.class
+com\poyectodamas\persistencia\UsuarioJpaController.class
+com\poyectodamas\proyecto_juego_de_damas\servelets\SvUsuario.class
+com\poyectodamas\persistencia\exceptions\NonexistentEntityException.class
+com\poyectodamas\persistencia\exceptions\PreexistingEntityException.class
+com\poyectodamas\persistencia\exceptions\IllegalOrphanException.class
+com\poyectodamas\persistencia\ControladorPersistencia.class
+logica\Controlador.class
+com\poyectodamas\proyecto_juego_de_damas\servelets\SvSesion.class
+logica\Usuario_.class

@@ -7,55 +7,63 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    <style>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>JSP Page</title>
+    <style type="text/css">
+        /* Estilos CSS */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
         form {
-            max-width: 400px;
-            margin: 0 auto;
+            text-align: center;
         }
-        input[type="text"],
-        input[type="email"],
-        input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin: 5px 0;
-            box-sizing: border-box;
-        }
+        
+
         input[type="submit"] {
-            width: 100%;
-            background-color: #4CAF50;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
+
         input[type="submit"]:hover {
-            background-color: #45a049;
+            background-color: #0056b3;
         }
     </style>
-    </head>
-    <body>
-        <h1>Registrate para Jugar</h1>
-        <% String hola = "aqui"; %>
-        <%= hola %>
-        <form action="SvUsuario" method="POST">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
-
-        <label for="nickname">Nickname:</label>
-        <input type="text" id="nickname" name="nickname" required>
-
-        <label for="email">Correo Electrónico:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="password">Contraseña:</label>
-        <input type="password" id="password" name="password" required>
-
-        <input type="submit" value="Registrarse">
+</head>
+<body>
+    <h1>Hello World!</h1>
+    
+    <div>
+    <!-- Formulario para el botón de inicio de sesión -->
+    <form action="sesion.jsp" method="get">
+        <input type="submit" value="Sesion" />
     </form>
-    </body>
+    
+    <!-- Formulario para el botón de registro -->
+    <form action="registro.jsp" method="get">
+        <input type="submit" value="Registro" />
+    </form>
+    </div>
+</body>
 </html>
