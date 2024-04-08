@@ -33,7 +33,7 @@ Controlador control = new Controlador();
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String nickname= request.getParameter("nickname");
-        String password= request.getParameter("nickname");
+        String password= request.getParameter("password");
         String email= request.getParameter("email");
         
         Usuario usu = new Usuario();
@@ -41,7 +41,7 @@ Controlador control = new Controlador();
         usu.setPassword(password);
         usu.setEmail(email);
         control.crearUsuario(usu);
-        
+        response.sendRedirect("principal.jsp");
     }
 
     /**

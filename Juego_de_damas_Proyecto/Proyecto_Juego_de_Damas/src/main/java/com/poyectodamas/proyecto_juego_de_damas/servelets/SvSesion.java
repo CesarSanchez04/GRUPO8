@@ -35,9 +35,9 @@ Controlador control = new Controlador();
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String nickname= request.getParameter("nickname");
-        String password= request.getParameter("nickname");
+        String password= request.getParameter("password");
         if(control.comprobarUsuario(nickname,password)){
-            response.sendRedirect("portada.jsp");
+            response.sendRedirect("principal.jsp");
         }else{
             response.sendRedirect("sesion.jsp");
         }

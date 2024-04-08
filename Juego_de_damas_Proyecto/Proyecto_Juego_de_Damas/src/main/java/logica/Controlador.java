@@ -15,4 +15,5 @@ public class Controlador {
         return control.comprobar(nickname, password);
     }
     
+    
 }

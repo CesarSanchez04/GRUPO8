@@ -1,42 +1,73 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>JSP Page</title>
     <style>
-        form {
-            max-width: 400px;
-            margin: 0 auto;
+        /* Estilo para el tablero de damas */
+        .tablero {
+            display: grid;
+            grid-template-columns: repeat(8, 50px); /* Define 8 columnas de 50px cada una */
+            grid-template-rows: repeat(8, 50px); /* Define 8 filas de 50px cada una */
+            border: 1px solid black; /* Borde del tablero */
         }
-        input[type="text"],
-        input[type="email"],
-        input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin: 5px 0;
-            box-sizing: border-box;
+        .casilla {
+            width: 50px;
+            height: 50px;
         }
-        input[type="submit"] {
-            width: 100%;
-            background-color: #4CAF50;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
+        .casilla-verde {
+            background-color: #BDB76B; /* Color verde bambú */
         }
-        input[type="submit"]:hover {
-            background-color: #45a049;
+        .casilla-beige {
+            background-color: #F5F5DC; /* Color beige pastel */
         }
-        .for{
-            background-color:red;
+        .borde-numerado {
+            display: grid;
+            grid-template-columns: auto 1fr; /* Una columna para el borde numerado y otra para el tablero */
+            grid-template-rows: auto;
+        }
+        .borde-numerado .numeracion {
+            display: grid;
+            grid-template-rows: repeat(8, 50px); /* 8 filas de 50px cada una */
+            justify-items: center; /* Centrar horizontalmente */
+        }
+        .borde-numerado .numeracion div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     </style>
-    </head>
-    <body>
-        <h1>Portada</h1>
-        
-    </body>
+</head>
+<body>
+    <h1>Tablero de Damas</h1>
+    <div class="borde-numerado">
+        <div class="numeracion">
+            <% for (int i = 8; i > 0; i--) { %>
+                <div><%= i %></div> <!-- Numeración de arriba hacia abajo -->
+            <% } %>
+        </div>
+        <div class="tablero">
+            <% 
+                boolean esVerde = true; // Variable para alternar entre casillas verdes y beige
+                for (int fila = 0; fila < 8; fila++) {
+                    for (int columna = 0; columna < 8; columna++) {
+                        if (esVerde) { %>
+                            <div class="casilla casilla-verde"></div>
+                        <% } else { %>
+                            <div class="casilla casilla-beige"></div>
+                        <% }
+                        esVerde = !esVerde; // Alternar entre casillas verdes y beige
+                    }
+                    esVerde = !esVerde; // Al final de cada fila, invertir para empezar con el otro color en la siguiente fila
+                } 
+            %>
+        </div>
+    </div>
+    <div style="text-align: center;"> <!-- Centrar la numeración -->
+        <% for (char c = 'A'; c <= 'H'; c++) { %>
+            <span><%= c %></span> <!-- Letras de izquierda a derecha -->
+        <% } %>
+    </div>
+</body>
 </html>

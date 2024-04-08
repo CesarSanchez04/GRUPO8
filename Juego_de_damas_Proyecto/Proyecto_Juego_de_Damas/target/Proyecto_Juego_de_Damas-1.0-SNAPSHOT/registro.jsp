@@ -37,7 +37,7 @@
     </head>
     <body>
         <h1>Registrate para Jugar</h1>
-        <form action="SvRegistro" method="POST">
+        <form action="SvUsuario" method="POST">
                      
         <label for="nickname">Nickname:</label>
         <input type="text" id="nickname" name="nickname" required>
