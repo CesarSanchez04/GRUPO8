@@ -11,10 +11,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import logica.Controlador;
+import logica.Usuario;
 
 
 @WebServlet(name = "SvUsuario", urlPatterns = {"/SvUsuario"})
 public class SvUsuario extends HttpServlet {
+Controlador control = new Controlador();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -23,28 +26,22 @@ public class SvUsuario extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        response.sendRedirect("registro.jsp");
     }
-
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String Usuario= request.getParameter("nombre");
         String nickname= request.getParameter("nickname");
+        String password= request.getParameter("nickname");
         String email= request.getParameter("email");
-        String password= request.getParameter("password");
-        System.out.println(Usuario);
-        System.out.println(nickname);
-        System.out.println(email);
-        System.out.println(password);
+        
+        Usuario usu = new Usuario();
+        usu.setNickname(nickname);
+        usu.setPassword(password);
+        usu.setEmail(email);
+        control.crearUsuario(usu);
+        
     }
 
     /**
