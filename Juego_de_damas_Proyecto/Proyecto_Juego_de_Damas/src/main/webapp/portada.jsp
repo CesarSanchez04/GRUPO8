@@ -1,73 +1,92 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>JSP Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablero de Damas</title>
     <style>
-        /* Estilo para el tablero de damas */
-        .tablero {
-            display: grid;
-            grid-template-columns: repeat(8, 50px); /* Define 8 columnas de 50px cada una */
-            grid-template-rows: repeat(8, 50px); /* Define 8 filas de 50px cada una */
-            border: 1px solid black; /* Borde del tablero */
-        }
-        .casilla {
-            width: 50px;
-            height: 50px;
-        }
-        .casilla-verde {
-            background-color: #BDB76B; /* Color verde bambÃº */
-        }
-        .casilla-beige {
-            background-color: #F5F5DC; /* Color beige pastel */
-        }
-        .borde-numerado {
-            display: grid;
-            grid-template-columns: auto 1fr; /* Una columna para el borde numerado y otra para el tablero */
-            grid-template-rows: auto;
-        }
-        .borde-numerado .numeracion {
-            display: grid;
-            grid-template-rows: repeat(8, 50px); /* 8 filas de 50px cada una */
-            justify-items: center; /* Centrar horizontalmente */
-        }
-        .borde-numerado .numeracion div {
+        body {
+            font-family: 'Arial Black', Gadget, sans-serif;
+            background-color: #808080; /* Gris rata */
+            margin: 0;
+            padding: 0;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .tablero {
+            position: relative;
+            width: 300px; /* Ajusta el ancho del tablero según sea necesario */
+            height: 300px; /* Ajusta la altura del tablero según sea necesario */
+        }
+
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .numeracion {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-left: 10px; /* Ajusta el margen izquierdo según sea necesario */
+        }
+
+        .numeracion div {
+            width: 10px;
+            text-align: center;
+        }
+
+        .letras {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: calc(100% + 20px); /* Ajusta el espacio entre las letras y el tablero según sea necesario */
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px; /* Ajusta el margen superior según sea necesario */
+        }
+
+        .letras span {
+            width: 10px;
+            text-align: center;
+        }
+
+        /* Estilos para el cuadro de usuario */
+        .user-box {
+            position: absolute;
+            top: 10px; /* Ajusta la posición vertical según sea necesario */
+            left: 10px; /* Ajusta la posición horizontal según sea necesario */
+            background-color: #FFFFFF; /* Color de fondo */
+            padding: 10px; /* Espaciado interno */
+            border-radius: 5px; /* Borde redondeado */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra */
+        }
+
+        .user-box img {
+            width: 30px; /* Tamaño de la imagen */
+            height: 30px;
+            border-radius: 50%; /* Borde redondeado para la imagen */
+            margin-right: 5px; /* Espacio entre la imagen y el texto */
         }
     </style>
 </head>
 <body>
-    <h1>Tablero de Damas</h1>
-    <div class="borde-numerado">
-        <div class="numeracion">
-            <% for (int i = 8; i > 0; i--) { %>
-                <div><%= i %></div> <!-- NumeraciÃ³n de arriba hacia abajo -->
-            <% } %>
-        </div>
-        <div class="tablero">
-            <% 
-                boolean esVerde = true; // Variable para alternar entre casillas verdes y beige
-                for (int fila = 0; fila < 8; fila++) {
-                    for (int columna = 0; columna < 8; columna++) {
-                        if (esVerde) { %>
-                            <div class="casilla casilla-verde"></div>
-                        <% } else { %>
-                            <div class="casilla casilla-beige"></div>
-                        <% }
-                        esVerde = !esVerde; // Alternar entre casillas verdes y beige
-                    }
-                    esVerde = !esVerde; // Al final de cada fila, invertir para empezar con el otro color en la siguiente fila
-                } 
-            %>
-        </div>
+    <div class="user-box">
+        Usuario: Tu Nombre
     </div>
-    <div style="text-align: center;"> <!-- Centrar la numeraciÃ³n -->
-        <% for (char c = 'A'; c <= 'H'; c++) { %>
-            <span><%= c %></span> <!-- Letras de izquierda a derecha -->
-        <% } %>
+
+    <div class="tablero">
+        <img src="TABLERO.png" alt="Tablero de Damas">
     </div>
+
+    
 </body>
 </html>
