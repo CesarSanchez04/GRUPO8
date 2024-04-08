@@ -15,3 +15,41 @@ Durante el Sprint 1, el equipo se centrará en establecer las bases del proyecto
 - **Métricas:** Mediremos el valor del negocio mediante métricas como la cantidad de usuarios activos mensuales, la retención de usuarios, la satisfacción del usuario y la participación en el juego. Además, analizaremos el crecimiento del número de partidas jugadas y la interacción de la comunidad en la plataforma.
 - **Hitos:** Los hitos clave incluyen el lanzamiento exitoso de la versión beta del software, la implementación de funciones esenciales como el registro de usuario y el inicio de sesión, y la mejora continua del sistema en respuesta a comentarios de los usuarios.
 - **Riesgos:** Los riesgos potenciales incluyen problemas de seguridad de datos, dificultades técnicas en el desarrollo de la plataforma, la no correcta familiarización con la aplicación de parte de los jugadores
+
+# Historias de Usuario
+
+| ID  | Nombre de la historia de usuario | Descripción de la historia de usuario  | Prioridad  | Esfuerzo estimado(Horas) | Esfuerzo real (si se completa) | Estado(Completado Pendiente en curso) | Desarrollador  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 1  | 
+Registro del jugador  | Como nuevo jugador de DamasCity necesito registrarme en la plataforma para poder acceder al juego y participar en partidas contra otros usuarios o jugar con las damas americanas con el computador. | Alta  | 3 Horas  | 2 horas  | En curso  | Breimer Palacios  |
+| 2  | Inicio de sesión  | Como jugador ya registrado, cuando quiera acceder a mi cuenta, necesito iniciar sesión con mi nickname y poder jugar en la aplicación  | Alta  | 1 hora  | 1 hora | Pendiente | Cesar Sanchez |
+| 3  | Cierre de sesión | El Jugador cuando entre a plataforma puede tener la opcion de cierre de sesion esto con la finalidad de poder cerrar su cuenta  | Alta | 1 hora  | —  | Pendiente  | Pedro Lautaro Quispe Ballesteros |
+
+# Criterios de Aceptación
+
+| ID y nombre de la historia del Usuario  | ACID | Descripción del criterio de aceptación | Estado (completado, pendiente, en progreso) | Desarrollador  |
+| --- | --- | --- | --- | --- |
+| Registro del Jugador | 1.1 Creación exitosa de una cuenta de usuario válida | Dado un nickname único y válido, una contraseña válida con al menos una mayúscula y un carácter especial, y un correo electrónico válido
+Cuando se crea una cuenta con estos datos
+Entonces el sistema debería crear una nueva cuenta
+Y mostrar un mensaje de registro exitos | Completado |  |
+|  | 1.2 Creación de una cuenta fallida con un nickname existente | Dado un nickname que ya existe
+Cuando se intenta crear una cuenta con este nickname, una contraseña válida con al menos una mayúscula y un carácter especial, y un correo electrónico válido
+Entonces el sistema no debería crear una nueva cuenta
+Y debería mostrar un mensaje de erro | Completado |  |
+|  | AC 1.3 Creación de una cuenta fallida con una contraseña no válida | Dado un nickname válido, una contraseña inválida sin al menos una mayúscula o un carácter especial, y un correo electrónico válido
+Cuando se intenta crear una cuenta con estos datos
+Entonces el sistema no debería crear una nueva cuenta
+Y debería mostrar un mensaje de error | Completado |  |
+|  | 1.4 Creación de una  uenta fallida con un nickname sin número
+ | Dado un nickname válido sin ningún número, una contraseña válida con al menos una mayúscula y un carácter especial, y un correo electrónico válido
+Cuando se intenta crear una cuenta con estos datos
+Entonces el sistema no debería crear una nueva cuenta
+Y debería mostrar un mensaje de error | Completado |  |
+|  | 1.5 Opción de regresar al menú principal desde el formulario de registro | Dado que el usuario se encuentra en el formulario de registro
+Cuando hace clic en la opción para regresar al menú principal
+Entonces el sistema debería redirigir al usuario al menú principal | Completado  |  |
+|  | 1.6 Creación de una cuenta fallida con contraseña válida pero correo electrónico inválido | Dado un nickname válido, una contraseña válida con al menos una mayúscula y un carácter especial, y un correo electrónico inválido
+Cuando se intenta crear una cuenta con estos datos
+Entonces el sistema no debería crear una nueva cuenta
+Y debería mostrar un mensaje de error | Completado  |  |
