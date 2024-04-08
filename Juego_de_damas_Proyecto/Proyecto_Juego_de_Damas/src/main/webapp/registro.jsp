@@ -2,39 +2,69 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    <style>
-        form {
-            max-width: 400px;
-            margin: 0 auto;
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Juego de Damas</title>
+    <style type="text/css">
+        /* Estilos CSS */
+        body {
+            font-family: 'Arial Black', Gadget, sans-serif;
+            background-color: #8B4513; /* Marrón */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #FFFFFF; /* Blanco */
+            text-shadow: 2px 2px #000000; /* Sombra */
+        }
+
+        form {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 300px; /* Ancho del formulario */
+        }
+
+        label {
+            color: #FFFFFF; /* Blanco */
+            margin-bottom: 10px;
+        }
+
         input[type="text"],
         input[type="email"],
         input[type="password"] {
-            width: 100%;
+            margin-bottom: 15px;
             padding: 10px;
-            margin: 5px 0;
-            box-sizing: border-box;
-        }
-        input[type="submit"] {
-            width: 100%;
-            background-color: #4CAF50;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
+            width: 100%; /* Ancho completo */
+            border-radius: 5px;
             border: none;
-            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #FFD700; /* Dorado */
+            color: #000000; /* Negro */
+            border: none;
+            border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
+
         input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-        .for{
-            background-color:red;
+            background-color: #FFA500; /* Naranja */
         }
     </style>
-    </head>
+</head>
     <body>
         <h1>Registrate para Jugar</h1>
         <form action="SvUsuario" method="POST">
