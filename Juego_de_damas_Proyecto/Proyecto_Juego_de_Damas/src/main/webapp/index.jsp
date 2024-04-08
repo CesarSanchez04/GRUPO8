@@ -1,4 +1,3 @@
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -9,33 +8,40 @@
         /* Estilos CSS */
         body {
             font-family: 'Arial Black', Gadget, sans-serif;
-            background-color: #8B4513; /* Marrón */
+            background-image: url('FONDO_DAMAS.jpeg'); /* Cambia 'ruta_de_la_imagen.jpg' por la ruta de tu imagen de fondo */
+            background-size: cover;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            justify-content: center; /* Centra verticalmente el contenido */
+            align-items: center; /* Centra horizontalmente el contenido */
             height: 100vh;
         }
 
         h1 {
             text-align: center;
+            margin-top: 50px; /* Mayor margen superior para el título */
             margin-bottom: 20px;
             color: #FFFFFF; /* Blanco */
             text-shadow: 2px 2px #000000; /* Sombra */
+            font-size: 36px; /* Tamaño de fuente más grande */
+            font-style: italic; /* Estilo de fuente */
         }
 
         form {
             text-align: center;
+            /*background-color: rgba(0, 0, 0, 0.5); /* Fondo negro con opacidad */
+            /*padding: 20px;
+            border-radius: 10px;*/
         }
 
         input[type="submit"] {
             margin: 10px;
             padding: 10px 20px;
             font-size: 16px;
-            background-color: #FFD700; /* Dorado */
-            color: #000000; /* Negro */
+            background-color: #808080; /* Gris rata */
+            color: #FFFFFF; /* Blanco */
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -43,7 +49,7 @@
         }
 
         input[type="submit"]:hover {
-            background-color: #FFA500; /* Naranja */
+            background-color: #A9A9A9; /* Gris rata más claro al pasar el cursor */
         }
     </style>
 </head>
@@ -63,4 +69,3 @@
     </div>
 </body>
 </html>
-
