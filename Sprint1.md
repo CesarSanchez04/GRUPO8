@@ -32,24 +32,24 @@ Registro del jugador  | Como nuevo jugador de DamasCity necesito registrarme en 
 | Registro del Jugador | 1.1 Creación exitosa de una cuenta de usuario válida | Dado un nickname único y válido, una contraseña válida con al menos una mayúscula y un carácter especial, y un correo electrónico válido
 Cuando se crea una cuenta con estos datos
 Entonces el sistema debería crear una nueva cuenta
-Y mostrar un mensaje de registro exitos | Completado |  |
+Y mostrar un mensaje de registro exitos | Completado | Breimer |
 |  | 1.2 Creación de una cuenta fallida con un nickname existente | Dado un nickname que ya existe
 Cuando se intenta crear una cuenta con este nickname, una contraseña válida con al menos una mayúscula y un carácter especial, y un correo electrónico válido
 Entonces el sistema no debería crear una nueva cuenta
-Y debería mostrar un mensaje de erro | Completado |  |
+Y debería mostrar un mensaje de error | Completado | Bremier |
 |  | AC 1.3 Creación de una cuenta fallida con una contraseña no válida | Dado un nickname válido, una contraseña inválida sin al menos una mayúscula o un carácter especial, y un correo electrónico válido
 Cuando se intenta crear una cuenta con estos datos
 Entonces el sistema no debería crear una nueva cuenta
-Y debería mostrar un mensaje de error | Completado |  |
+Y debería mostrar un mensaje de error | Completado | Lautaro |
 |  | 1.4 Creación de una  uenta fallida con un nickname sin número
  | Dado un nickname válido sin ningún número, una contraseña válida con al menos una mayúscula y un carácter especial, y un correo electrónico válido
 Cuando se intenta crear una cuenta con estos datos
 Entonces el sistema no debería crear una nueva cuenta
-Y debería mostrar un mensaje de error | Completado |  |
+Y debería mostrar un mensaje de error | Completado | Cesar |
 |  | 1.5 Opción de regresar al menú principal desde el formulario de registro | Dado que el usuario se encuentra en el formulario de registro
 Cuando hace clic en la opción para regresar al menú principal
-Entonces el sistema debería redirigir al usuario al menú principal | Completado  |  |
+Entonces el sistema debería redirigir al usuario al menú principal | Completado  | Cesar |
 |  | 1.6 Creación de una cuenta fallida con contraseña válida pero correo electrónico inválido | Dado un nickname válido, una contraseña válida con al menos una mayúscula y un carácter especial, y un correo electrónico inválido
 Cuando se intenta crear una cuenta con estos datos
 Entonces el sistema no debería crear una nueva cuenta
-Y debería mostrar un mensaje de error | Completado  |  |
+Y debería mostrar un mensaje de error | Completado  | Breimer |
