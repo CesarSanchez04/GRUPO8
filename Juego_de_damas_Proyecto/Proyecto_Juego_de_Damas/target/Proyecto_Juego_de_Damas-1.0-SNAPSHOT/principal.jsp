@@ -55,7 +55,7 @@
     </style>
 </head>
 <body>
-    <h1>Hello World!</h1>
+    <h1>Modo de juego</h1>
     
     <div>
     <!-- Formulario para el botón de inicio de sesión -->
