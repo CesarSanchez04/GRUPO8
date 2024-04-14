@@ -3,6 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+     <|--validacion de Sesion>
+    <% HttpSession sesion= request.getSession();
+       String usuario=(String)request.getSession().getAttribute("nickname");
+       if(usuario==null){
+          response.sendRedirect("sinlogin.jsp");
+        }
+      %>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>JSP Page</title>
     <style type="text/css">

@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import logica.Controlador;
 import logica.Usuario;
 
@@ -37,9 +38,11 @@ Controlador control = new Controlador();
         String nickname= request.getParameter("nickname");
         String password= request.getParameter("password");
         if(control.comprobarUsuario(nickname,password)){
+            HttpSession sesion= request.getSession(true); 
+            sesion.setAttribute("nickname",nickname);
             response.sendRedirect("principal.jsp");
         }else{
-            response.sendRedirect("sesion.jsp");
+            response.sendRedirect("loginError.jsp");
         }
     }
 

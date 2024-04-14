@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import logica.Controlador;
 import logica.Usuario;
 
@@ -42,6 +43,8 @@ Controlador control = new Controlador();
         usu.setEmail(email);
         control.crearUsuario(usu);
         response.sendRedirect("principal.jsp");
+        HttpSession sesion= request.getSession(true);
+        sesion.setAttribute("nickname",nickname);
     }
 
     /**
