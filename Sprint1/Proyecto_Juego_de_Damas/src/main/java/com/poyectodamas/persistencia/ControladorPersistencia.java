@@ -52,10 +52,4 @@ public class ControladorPersistencia {
             return null; // Indica que ocurrió un error al obtener la contraseña encriptada
         }
     }
-    public boolean validarNickname(String nickname){
-        return usuJpa.findUsuarioByNickname(nickname)!=null; 
-    }
-    public boolean validarEmail(String email){
-        return usuJpa.findUsuarioByEmail(email)!= null; 
-    }
 }

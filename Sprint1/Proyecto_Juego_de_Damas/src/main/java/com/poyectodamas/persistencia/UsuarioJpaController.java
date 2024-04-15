@@ -8,7 +8,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
-import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -120,7 +119,7 @@ public class UsuarioJpaController implements Serializable {
             em.close();
         }
     }
-    public Usuario findUsuarioByNickname(String nickname) {
+     public Usuario findUsuarioByNickname(String nickname) {
         EntityManager em = getEntityManager();
         try {
             CriteriaBuilder cb = em.getCriteriaBuilder();
@@ -133,22 +132,6 @@ public class UsuarioJpaController implements Serializable {
             em.close();
         }
     }
-    public Usuario findUsuarioByEmail(String email) {
-        EntityManager em = getEntityManager();
-        try {
-            CriteriaBuilder cb = em.getCriteriaBuilder();
-            CriteriaQuery<Usuario> cq = cb.createQuery(Usuario.class);
-            Root<Usuario> root = cq.from(Usuario.class);
-            cq.where(cb.equal(root.get("email"), email));  // Asumiendo que el campo en la entidad se llama 'email'
-            Query q = em.createQuery(cq);
-            return (Usuario) q.getSingleResult();  // Obtiene un único resultado
-        } catch (NoResultException e) {
-            return null;  // Retorna null si no hay un usuario con ese email
-        } finally {
-            em.close();
-        }
-    }
-
     public int getUsuarioCount() {
         EntityManager em = getEntityManager();
         try {

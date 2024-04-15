@@ -6,8 +6,6 @@ package com.poyectodamas.proyecto_juego_de_damas.servelets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -43,33 +41,10 @@ Controlador control = new Controlador();
         usu.setNickname(nickname);
         usu.setPassword(password);
         usu.setEmail(email);
-        List<String> errores = validateUser(nickname, password, email);
-        if(!errores.isEmpty()){
-           request.setAttribute("errores", errores);
-           request.getRequestDispatcher("registro.jsp").forward(request, response);
-        }
-        else{
-           control.crearUsuario(usu);
-           response.sendRedirect("principal.jsp");
-           HttpSession sesion= request.getSession(true);
-           sesion.setAttribute("nickname",nickname);
-        }
-
-    }
-    private List<String> validateUser(String nickname, String password, String email) {
-        List<String> errores = new ArrayList<>();
-
-        if (nickname == null || control.validarNickname(nickname)) {
-            errores.add("Ya existe el Nickname, prueba con otro.");
-        }
-
-        if (password == null || !password.matches(".*[!@#$%^&*].*")) {
-            errores.add("La contraseña debe contener al menos una letra mayúscula y un carácter especial");
-        }
-        if(email == null || control.validarEmail(email)){
-           errores.add("Ya esta registrado este email, prueba con otro"); 
-        }
-            return errores;
+        control.crearUsuario(usu);
+        response.sendRedirect("principal.jsp");
+        HttpSession sesion= request.getSession(true);
+        sesion.setAttribute("nickname",nickname);
     }
 
     /**

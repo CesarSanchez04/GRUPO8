@@ -1,4 +1,3 @@
-<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -72,22 +71,10 @@
         input[type="submit"]:hover {
             background-color: #A9A9A9; /* Gris rata más claro al pasar el cursor */
         }
-        .error {
-            color: #FF0000; /* Rojo */
-            margin: 10px;
-            text-align: center;
-        }
     </style>
 </head>
-<h1>Registrate para Jugar</h1>
-    <% if (request.getAttribute("errores") != null) { %>
-        <div class="error">
-            <% List<String> errores = (List<String>) request.getAttribute("errores");
-               for (String error : errores) { %>
-                   <p><%= error %></p>
-            <% } %>
-        </div>
-    <% } %>
+<body>
+    <h1>Registrate para Jugar</h1>
     <form action="SvUsuario" method="POST">
         <label for="nickname">Nickname:</label>
         <input type="text" id="nickname" name="nickname" required>
@@ -100,7 +87,7 @@
 
         <input type="submit" value="Registrarse">
     </form>
-    <form action="index.jsp" method="get">
+    <form  action="index.jsp" method="get">
         <input type="submit" value="Regresar" />
     </form>
 </body>
