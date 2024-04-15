@@ -53,9 +53,31 @@ public class ControladorPersistencia {
         }
     }
     public boolean validarNickname(String nickname){
-        return usuJpa.findUsuarioByNickname(nickname)!=null; 
+        try {
+            return usuJpa.findUsuarioByNickname(nickname)!=null; 
+        }
+        catch (NoResultException e) {
+            // Maneja la excepción si no se encuentra ningún usuario con el nickname dado
+            return false;
+        } catch (Exception e) {
+            // Maneja otras excepciones que puedan ocurrir durante la búsqueda del usuario
+            e.printStackTrace(); // Imprime el stack trace para propósitos de depuración
+            return false; // Indica que la comprobación no fue exitosa debido a un error
+        }
+        
     }
     public boolean validarEmail(String email){
-        return usuJpa.findUsuarioByEmail(email)!= null; 
+        try {
+            return usuJpa.findUsuarioByEmail(email)!= null;  
+        }
+        catch (NoResultException e) {
+            // Maneja la excepción si no se encuentra ningún usuario con el nickname dado
+            return false;
+        } catch (Exception e) {
+            // Maneja otras excepciones que puedan ocurrir durante la búsqueda del usuario
+            e.printStackTrace(); // Imprime el stack trace para propósitos de depuración
+            return false; // Indica que la comprobación no fue exitosa debido a un error
+        }
     }
+    
 }
