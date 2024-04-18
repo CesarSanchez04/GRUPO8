@@ -1,0 +1,152 @@
+* {
+    box-sizing:border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding:0;
+    margin:0;
+    justify-content: center;
+    align-items: center; 
+}
+
+header {
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.8), black);
+    padding: 55px;
+    box-sizing: border-box;
+    justify-content: center;
+    border-bottom: 5px solid #ffcc33;
+    align-items: center; 
+}
+
+main {
+    background-image: url('FONDO_DAMAS.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center; 
+    position: relative;
+}
+
+
+p {
+    align-items: center;
+    justify-content: center;
+    color: red;
+    text-align: center;
+    font-size: 10px;
+}
+
+h1 {
+    align-items: center;
+    color: #ffcc33;
+    text-align: center;
+    font-size: 30px;
+    z-index:1;
+}
+
+.titulo { 
+    align-items: center;
+    color: #ffcc33;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 10px;
+    z-index:1;
+}
+
+section {
+            text-align: center;
+        }
+
+input[type="submit"] {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #808080;
+            color: #FFFFFF; 
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            z-index:1;
+        }
+        
+input[type="submit"]:hover {
+    background-color: #A9A9A9; 
+}
+        
+input[type="submit"]:active {
+    background-color: #CCCCCC; 
+}
+
+form {
+    text-align: center;
+    font-size: 18px;
+    color: #000000;
+    justify-content: center;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    z-index:1;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"]{
+    margin: 10px;
+    padding: 10px 15px;
+    font-size: 14px;
+    background-color: #FFFFFF; 
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%; 
+    z-index:1;
+}
+            
+.error {
+    color: red;
+    margin: 10px;
+    text-align: center;
+    z-index:1;
+    font-size:18px;
+}
+
+span {
+    justify-content: center;
+    font-family: inherit;
+    color: white;
+    font-size:18px;
+    text-align: center;
+}
+
+.cuadrado {
+    width: 450px;  
+    height: 450px; 
+    background-color: #663300; 
+    
+    border: 2px solid #000000; 
+    border-radius: 30px;
+    position: absolute; 
+    top: 50%; 
+    left: 51.2%; 
+    transform: translate(-50%, -50%); 
+    z-index: 0; 
+}
+
+.cuadrado2 {
+    width: 300px; 
+    height: 250px; 
+    background-color: #663300; 
+    
+    border: 2px solid #000000; 
+    border-radius: 30px;
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    z-index: 0; 
+}
