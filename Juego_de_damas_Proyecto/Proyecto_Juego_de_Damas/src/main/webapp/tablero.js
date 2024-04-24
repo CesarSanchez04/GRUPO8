@@ -40,16 +40,43 @@ function selectPiece(row, col) {
 function showPossibleMoves(moves) {
     // Limpiar movimientos anteriores
     document.querySelectorAll('.possible-move').forEach(el => el.classList.remove('possible-move'));
+    document.querySelectorAll('.piece').forEach(p => p.classList.remove('selected'));
+
+    // Marcar la ficha seleccionada
+    const selectedPiece = document.querySelector(`.cell[data-row="${moves.origin.row}"][data-col="${moves.origin.col}"] .piece`);
+    selectedPiece.classList.add('selected');
 
     // Resaltar movimientos posibles
-    moves.forEach(move => {
+    moves.possibleMoves.forEach(move => {
         const cell = document.querySelector(`.cell[data-row="${move.row}"][data-col="${move.col}"]`);
         cell.classList.add('possible-move');
-        cell.addEventListener('click', () => movePiece(move.row, move.col));
+        cell.addEventListener('click', () => movePiece(moves.origin.row, moves.origin.col, move.row, move.col), { once: true });
     });
 }
 
 function movePiece(row, col) {
-    // Lógica para mover la ficha seleccionada a la nueva posición
-    // y comunicación con el servidor si es necesario
+    fetch(`/MovePieceServlet?originRow=${originRow}&originCol=${originCol}&targetRow=${targetRow}&targetCol=${targetCol}`, { method: 'GET' })
+    .then(response => response.json())
+    .then(data => {
+        updateBoard(data);
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+function updateBoard(data) {
+    // Actualizar el tablero según la respuesta del servidor
+    if (data.moveValid) {
+        const originCell = document.querySelector(`.cell[data-row="${data.origin.row}"][data-col="${data.origin.col}"]`);
+        const targetCell = document.querySelector(`.cell[data-row="${data.target.row}"][data-col="${data.target.col}"]`);
+
+        // Mover la ficha visualmente
+        const piece = originCell.removeChild(originCell.querySelector('.piece'));
+        targetCell.appendChild(piece);
+
+        // Limpiar todas las casillas sombreadas
+        document.querySelectorAll('.possible-move').forEach(el => el.classList.remove('possible-move'));
+        document.querySelectorAll('.selected').forEach(p => p.classList.remove('selected'));
+    } else {
+        alert("Movimiento inválido. Intente nuevamente.");
+    }
 }
