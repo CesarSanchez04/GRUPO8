@@ -8,6 +8,7 @@ package logica;
  *
  * @author casm7
  */
-public class Color {
-    
+public enum Color {
+    ROJO,BLANCO
 }
+

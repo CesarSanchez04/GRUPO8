@@ -9,7 +9,7 @@ function createBoard() {
     for (let row = 0; row < 8; row++) {
         for (let col = 0; col < 8; col++) {
             const cell = document.createElement('div');
-            cell.className = 'cell ' + (isBlack ? 'gray' : 'black');
+            cell.className = 'cell ' + (isBlack ? 'black' : 'gray');
             cell.dataset.row = row;
             cell.dataset.col = col;
             
