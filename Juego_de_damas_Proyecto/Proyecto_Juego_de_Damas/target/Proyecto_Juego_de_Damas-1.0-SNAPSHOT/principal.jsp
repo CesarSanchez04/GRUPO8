@@ -25,12 +25,12 @@
     
         <div>
         <!-- Formulario para el botón de inicio de sesión -->
-        <form action="versus.jsp" method="get">
+        <form action="TablerNuevo.jsp" method="get">
             <input type="submit" value="1 vs 1" />
         </form>
     
         <!-- Formulario para el botón de registro -->
-        <form action="maquina.jsp" method="get">
+        <form action="TablerNuevo.jsp" method="get">
             <input type="submit" value="Vs Computer" />
         </form>
         </div>
