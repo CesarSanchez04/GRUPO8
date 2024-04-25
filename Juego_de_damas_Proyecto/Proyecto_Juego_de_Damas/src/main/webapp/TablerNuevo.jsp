@@ -13,13 +13,12 @@
     <main>
         <section>
             <div id="board">
-                <!-- Este código se generará dinámicamente con JavaScript -->
+                 <!-- Este código se generará dinámicamente con JavaScript -->
             </div>
             
         </section>
     </main>
-    
     <footer></footer>
-    <script src="./tablero.js"></script>
+    <script src="Tablero.js"></script>
 </body>
 </html>

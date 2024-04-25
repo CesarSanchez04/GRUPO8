@@ -1,6 +1,6 @@
 /* 
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Other/javascript.js to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Other/Tablero.js to edit this template
  */
 
 function createBoard() {
@@ -29,14 +29,34 @@ function createBoard() {
 }
 
 function selectPiece(row, col) {
-    fetch(`/SelectPieceServlet?row=${row}&col=${col}`, { method: 'GET' })
+    console.log("Row: ", row);
+    console.log("Col: ", col);
+    const requestData = {
+        row: row,
+        col: col
+    };
+
+    fetch('/Proyecto_Juego_de_Damas/SelectPieceServlet', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(requestData)
+    })
     .then(response => response.json())
     .then(data => {
+        console.log(data);
+        showPossibleMoves(data);
+    })
+    .then(data => {
+        console.log('Datos recibidos del servlet:', data); // Aquí se agrega el console.log
         showPossibleMoves(data);
     })
     .catch(error => console.error('Error:', error));
+    
 }
-
+createBoard();
+/*
 function showPossibleMoves(moves) {
     // Limpiar movimientos anteriores
     document.querySelectorAll('.possible-move').forEach(el => el.classList.remove('possible-move'));
@@ -80,3 +100,5 @@ function updateBoard(data) {
         alert("Movimiento inválido. Intente nuevamente.");
     }
 }
+
+*/

@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author lauta
  */
+/*
 @WebServlet(name = "MovePieceServlet", urlPatterns = {"/MovePieceServlet"})
 public class MovePieceServlet extends HttpServlet {
 

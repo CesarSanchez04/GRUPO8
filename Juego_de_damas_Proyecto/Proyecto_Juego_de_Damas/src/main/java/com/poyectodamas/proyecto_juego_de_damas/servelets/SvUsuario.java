@@ -18,7 +18,7 @@ import logica.Controlador;
 import logica.Usuario;
 
 
-@WebServlet(name = "SvUsuario", urlPatterns = {"/SvUsuario"})
+@WebServlet(name = "SvUsuario", urlPatterns = {"/SvUsuario "})
 public class SvUsuario extends HttpServlet {
 Controlador control = new Controlador();
 
