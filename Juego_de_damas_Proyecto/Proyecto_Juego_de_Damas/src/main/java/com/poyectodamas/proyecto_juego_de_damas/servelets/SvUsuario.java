@@ -27,13 +27,13 @@ Controlador control = new Controlador();
     }
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.sendRedirect("registro.jsp");
     }
     
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String nickname= request.getParameter("nickname");
         String password= request.getParameter("password");

@@ -42,7 +42,7 @@ Controlador control = new Controlador();
             sesion.setAttribute("nickname",nickname);
             response.sendRedirect("principal.jsp");
         }else{
-            response.sendRedirect("loginError.jsp");
+            response.sendRedirect("sesion.jsp");
         }
     }
 

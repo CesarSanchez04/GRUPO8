@@ -7,7 +7,7 @@
     <% HttpSession sesion= request.getSession();
        String usuario=(String)request.getSession().getAttribute("nickname");
        if(usuario==null){
-          response.sendRedirect("sinlogin.jsp");
+          response.sendRedirect("registro.jsp");
         }
       %>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
