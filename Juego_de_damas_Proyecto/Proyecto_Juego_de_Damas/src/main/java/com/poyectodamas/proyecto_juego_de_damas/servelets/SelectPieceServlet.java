@@ -4,8 +4,10 @@
  */
 package com.poyectodamas.proyecto_juego_de_damas.servelets;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Enumeration;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,20 +37,26 @@ public class SelectPieceServlet extends HttpServlet {
         response.setHeader("Access-Control-Allow-Origin", "*");
         response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
         response.setHeader("Access-Control-Allow-Headers", "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
-        int row = Integer.parseInt(request.getParameter("row"));
-        int col = Integer.parseInt(request.getParameter("col"));
-        System.out.println("Row: " + row);
-        System.out.println("Col: " + col);
+        
+    // Obteniendo el cuerpo de la solicitud
+    BufferedReader reader = request.getReader();
+    StringBuilder requestBody = new StringBuilder();
+    String line;
+    while ((line = reader.readLine()) != null) {
+        requestBody.append(line);
+    }
 
-        
-        // Aquí puedes procesar la fila y la columna según sea necesario
-        
-        // Simplemente devuelve un movimiento fijo por ahora (por ejemplo, fila - 1, columna + 1)
-        int newRow = row - 1;
-        int newCol = col + 1;
+    System.out.println("Cuerpo de la solicitud: " + requestBody.toString());
+    String[] N= requestBody.toString().split(",");
+    String row = N[0];
+    String col = N[1];
+    row= N[0].substring(N[0].length() -1, N[0].length());
+    col= N[1].substring(N[1].length() -2, N[1].length()-1);
+    System.out.println("fila: "+row);
+    System.out.println("columna: "+col);
         
         // Formar la respuesta como JSON
-        String jsonResponse = "{ \"newRow\": " + newRow + ", \"newCol\": " + newCol + " }";
+        String jsonResponse = "{ \"newRow\": " +Integer.parseInt(row) + ", \"newCol\": " + Integer.parseInt(col) + " }";
         
         // Configurar la respuesta
         response.setContentType("application/json");
@@ -57,6 +65,7 @@ public class SelectPieceServlet extends HttpServlet {
         // Enviar la respuesta al cliente
         response.getWriter().write(jsonResponse);
     }
+    
 
 
     @Override

@@ -36,7 +36,7 @@ function selectPiece(row, col) {
         col: col
     };
 
-    fetch('/Proyecto_Juego_de_Damas/SelectPieceServlet', {
+    fetch('http://localhost:8080/Proyecto_Juego_de_Damas/SelectPieceServlet', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
