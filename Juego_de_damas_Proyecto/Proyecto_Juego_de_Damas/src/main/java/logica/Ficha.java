@@ -6,33 +6,54 @@ package logica;
 
 /**
  *
- * @author casm7
+ * @author lauta
  */
 public class Ficha {
-    private final Color color; // Color de la ficha
-    private boolean esRey; // Estado que indica si la ficha es un rey
+    private int fila;
+    private int columna; 
+    private String color;  // color: rojo reina, rojo peon, blanco, blanco peon
+    private boolean estado=true;     // vivo o muerto 
 
-    // Constructor para inicializar una ficha con un color específico y no como rey
-    public Ficha(Color color) {
+    public Ficha(int fila, int columna, String color, boolean estado) {
+        this.fila = fila;
+        this.columna = columna;
         this.color = color;
-        this.esRey = false; // Las fichas se inicializan como no reyes
+        this.estado=estado; 
+    }
+    public Ficha() {               
+        this.estado=false; 
+    }
+    
+    public void setFila(int fila) {
+        this.fila = fila;
     }
 
-    // Retorna el color de la ficha
-    public Color getColor() {
+    public void setColumna(int columna) {
+        this.columna = columna;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
+    }
+
+    public int getFila() {
+        return fila;
+    }
+
+    public int getColumna() {
+        return columna;
+    }
+
+    public String getColor() {
         return color;
     }
 
-    // Establece una ficha como rey
-    public void coronar() {
-        esRey = true;
-    }
-
-    // Verifica si la ficha es un rey
-    public boolean esRey() {
-        return esRey;
+    public boolean getEstado() {
+        return estado;
     }
     
 }
-
-

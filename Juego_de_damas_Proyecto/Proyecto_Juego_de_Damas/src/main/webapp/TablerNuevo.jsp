@@ -19,6 +19,6 @@
         </section>
     </main>
     <footer></footer>
-    <script src="Tablero.js"></script>
+    <script src="Tablerito.js"></script>
 </body>
 </html>
